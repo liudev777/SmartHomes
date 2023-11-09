@@ -1,0 +1,31 @@
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 1rem;
+  color: white;
+}
+
+.Landing {
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #f7f7f7;
+}
+
+.App-footer {
+  background-color: #282c34;
+  padding: 0rem;
+  color: white;
+  /* position: absolute;Í */
+  width: 100%;
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+}

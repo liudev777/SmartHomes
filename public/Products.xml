@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf8'?>
+<SmartProducts>
+  <Category name="Smart Doorbells">
+    <Product id="1" name="Ring Video Doorbell 4">
+      <Price>199.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>19.99</WarrantyCost>
+      <Description>1080p HD video doorbell with enhanced features.</Description>
+    </Product>
+    <Product id="2" name="Nest Hello">
+      <Price>229.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>20.99</WarrantyCost>
+      <Description>Smart Wi-Fi video doorbell with 24/7 streaming.</Description>
+    </Product>
+    <Product id="3" name="Arlo Video Doorbell">
+      <Price>150.00</Price>
+      <ManufacturerRebate>5.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>15.99</WarrantyCost>
+      <Description>HD video doorbell with person, animal, and package detection.</Description>
+    </Product>
+    <Product id="4" name="Eufy Security Doorbell">
+      <Price>169.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>18.99</WarrantyCost>
+      <Description>Local storage video doorbell with no monthly fees.</Description>
+    </Product>
+    <Product id="5" name="SimpliSafe Doorbell">
+      <Price>169.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>10.00</DiscountAmount>
+      <WarrantyCost>17.99</WarrantyCost>
+      <Description>Smart doorbell that works with any door.</Description>
+    </Product>
+  </Category>
+  <Category name="Smart Doorlocks">
+    <Product id="6" name="August Wi-Fi Smart Lock">
+      <Price>229.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>24.99</WarrantyCost>
+      <Description>Secure, keyless entry for your smart home.</Description>
+    </Product>
+    <Product id="7" name="Schlage Encode">
+      <Price>209.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>15.00</DiscountAmount>
+      <WarrantyCost>21.99</WarrantyCost>
+      <Description>Smart Wi-Fi deadbolt with built-in alarm.</Description>
+    </Product>
+    <Product id="8" name="Yale Assure Lock">
+      <Price>199.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>22.99</WarrantyCost>
+      <Description>Smart lock with touchscreen keypad.</Description>
+    </Product>
+    <Product id="9" name="Kwikset Halo">
+      <Price>229.00</Price>
+      <ManufacturerRebate>10.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>23.99</WarrantyCost>
+      <Description>Wi-Fi smart lock with keyless entry.</Description>
+    </Product>
+    <Product id="10" name="Ultraloq U-Bolt Pro">
+      <Price>179.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>19.99</WarrantyCost>
+      <Description>6-in-1 keyless entry smart lock with fingerprint and touchscreen.</Description>
+    </Product>
+  </Category>
+  <Category name="Smart Speakers">
+    <Product id="11" name="Sonos One">
+      <Price>219.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>20.00</DiscountAmount>
+      <WarrantyCost>29.99</WarrantyCost>
+      <Description>The powerful smart speaker with voice control built in.</Description>
+    </Product>
+    <Product id="12" name="Amazon Echo Dot">
+      <Price>49.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>4.99</WarrantyCost>
+      <Description>Compact smart speaker with Alexa.</Description>
+    </Product>
+    <Product id="13" name="Google Nest Audio">
+      <Price>99.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>9.99</WarrantyCost>
+      <Description>High-quality sound with Google Assistant.</Description>
+    </Product>
+    <Product id="14" name="Apple HomePod mini">
+      <Price>99.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>9.99</WarrantyCost>
+      <Description>Room-filling sound in a compact speaker.</Description>
+    </Product>
+    <Product id="15" name="Bose Home Speaker">
+      <Price>379.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>30.00</DiscountAmount>
+      <WarrantyCost>39.99</WarrantyCost>
+      <Description>Powerful smart speaker with voice control.</Description>
+    </Product>
+  </Category>
+  <Category name="Smart Lightings">
+    <Product id="16" name="Philips Hue White and Color Ambiance">
+      <Price>159.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>10.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>
+      <Description>Smart lighting controlled by voice or smart device.</Description>
+    </Product>
+    <Product id="17" name="LIFX A19 LED Light">
+      <Price>59.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Wi-Fi smart adjustable, multicolor LED light.</Description>
+    </Product>
+    <Product id="18" name="TP-Link Kasa Smart Bulb">
+      <Price>24.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Dimmable smart Wi-Fi light bulb.</Description>
+    </Product>
+    <Product id="19" name="Sengled Smart LED">
+      <Price>19.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Smart Wi-Fi LED bulb that can be controlled remotely.</Description>
+    </Product>
+    <Product id="20" name="Wyze Bulb">
+      <Price>14.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Tunable white LED Wi-Fi bulb.</Description>
+    </Product>
+  </Category>
+  <Category id="21" name="Smart Thermostats">
+    <Product name="Nest Learning Thermostat">
+      <Price>249.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Programmable smart thermostat that learns your schedule.</Description>
+    </Product>
+    <Product id="22" name="Ecobee SmartThermostat">
+      <Price>249.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Smart thermostat with voice control.</Description>
+    </Product>
+    <Product id="23" name="Honeywell Home T9">
+      <Price>169.99</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Smart thermostat with remote sensor.</Description>
+    </Product>
+    <Product id="24" name="Emerson Sensi Touch">
+      <Price>159.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Smart thermostat with touch screen.</Description>
+    </Product>
+    <Product id="25" name="Lux Kono Smart">
+      <Price>149.00</Price>
+      <ManufacturerRebate>0.00</ManufacturerRebate>
+      <DiscountAmount>0.00</DiscountAmount>
+      <WarrantyCost>14.99</WarrantyCost>     
+      <Description>Energy-saving smart thermostat with geofencing.</Description>
+    </Product>
+  </Category>
+</SmartProducts>

@@ -1,0 +1,55 @@
+.products-container {
+    display: flex;
+    flex-direction: row; /* This will place side-nav and products-view side by side */
+    max-height: calc(100vh - 120px); /* Adjust the height to account for header and footer */
+    /* margin-top: 60px;  */
+    margin-bottom: 60px; /* Same as footer height */
+  }
+  
+  .side-nav {
+    flex: 0 0 200px; /* Fixed width for the sidebar */
+    background-color: #f4f4f4;
+    padding: 20px;
+    overflow-y: auto;
+    height: auto; /* Height should be auto, not 100%, to avoid extending beyond the viewport */
+    /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+    /* other styles */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    height: 500px;
+  }
+
+  .side-nav button {
+    width: 100%; /* Full width of the sidebar */
+    padding: 10px; /* Padding for the buttons, adjust as needed */
+    border: none; /* Removes border */
+    background-color: #f4f4f4; /* Background color of buttons, match with side-nav */
+    text-align: center; /* Center the text within the button */
+    margin-bottom: 5px; /* Space between buttons */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-size: 1rem; /* Adjust font size as needed */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .products-view {
+    flex: 1; /* Take up the remaining space */
+    padding: 20px;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto; /* Add vertical scroll if needed */
+    /* other styles */
+  }
+  
+  .horizontal-scroll {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Add space between product cards */
+    /* other styles */
+  }
+  
+  .product-card {
+    /* styles for product card */
+    /* other styles */
+  }
+  
