@@ -21,6 +21,7 @@ const Products = () => {
         // console.log("Parsed Products:", parsedProducts); // Check the parsed products
         setCategories(Object.keys(parsedProducts));
         setProducts(parsedProducts);
+        setSelectedProduct(products[0])
       } catch (error) {
         console.error("Failed to load products: ", error);
       }
@@ -46,6 +47,14 @@ const Products = () => {
           <h3>{product.name}</h3>
           <p>{product.price}</p>
           <p>{product.description}</p>
+          <button
+            key={product}
+            onClick={() => {
+              addToCart(product);
+            }}
+          >
+            Add to Cart
+          </button>
         </div>
       ))}
     </div>

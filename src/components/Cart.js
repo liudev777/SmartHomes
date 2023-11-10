@@ -1,7 +1,11 @@
 import { useCart } from "../context/CartContext";
 
 const Cart = () => {
-  const { cartItems } = useCart();
+  const { cartItems, removeFromCart } = useCart();
+
+  const handleRemove = (id) => {
+    removeFromCart(id);
+  };
 
   // Calculate the totals
   const totals = cartItems.reduce(
@@ -47,6 +51,11 @@ const Cart = () => {
                   <td>${discount}</td>
                   <td>${priceAfterDiscount}</td>
                   <td>{item.quantity}</td>
+                  <td>
+                    <button onClick={() => handleRemove(item.id)}>
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               );
             })}

@@ -11,6 +11,7 @@ import Orders from "./components/Orders";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
 import { CartProvider } from "./context/CartContext";
+import { UserProvider } from "./context/UserContext";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Navbar />
         <main className="App-content">
+          <UserProvider>
           <CartProvider>
             <Routes>
               <Route path="/home" element={<Landing />} />
@@ -28,6 +30,7 @@ function App() {
               <Route path="/login" element={<Login />} />
             </Routes>
           </CartProvider>
+          </UserProvider>
         </main>
         <Footer />
       </div>

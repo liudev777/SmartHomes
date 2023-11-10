@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Users>
+  <User type="customer">
+    <Username>c</Username>
+    <Password>c</Password>
+  </User>
+  <User type="salesman">
+    <Username>s</Username>
+    <Password>s</Password>
+  </User>
+  <User type="manager">
+    <Username>m</Username>
+    <Password>m</Password>
+  </User>
+</Users>
