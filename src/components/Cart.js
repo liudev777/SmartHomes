@@ -1,7 +1,11 @@
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../context/UserContext";
 
 const Cart = () => {
   const { cartItems, removeFromCart } = useCart();
+  const { currentUser } = useUser();
+
 
   const handleRemove = (id) => {
     removeFromCart(id);
@@ -21,6 +25,28 @@ const Cart = () => {
     },
     { totalBeforeDiscount: 0, totalAfterDiscount: 0 }
   );
+
+  const navigate = useNavigate();
+
+  const goToCheckout = () => {
+    navigate('/checkout');
+  };
+
+  const goToLogin = () => {
+    navigate('/login');
+  };
+
+  const handleClick = () => {
+    if (!currentUser) {
+      goToLogin();
+      return;
+    }
+
+    goToCheckout();
+    return;
+
+  }
+
 
   return (
     <div>
@@ -70,7 +96,7 @@ const Cart = () => {
         <p>
           Total Cost After Discount: ${totals.totalAfterDiscount.toFixed(2)}
         </p>
-        <button onClick={() => console.log("Checkout")}>Checkout</button>
+        <button onClick={handleClick}>Checkout</button>
       </div>
     </div>
   );

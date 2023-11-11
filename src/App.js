@@ -10,8 +10,11 @@ import Products from "./components/Products";
 import Orders from "./components/Orders";
 import Cart from "./components/Cart";
 import Login from "./components/Login";
+import Checkout from "./components/Checkout";
 import { CartProvider } from "./context/CartContext";
 import { UserProvider } from "./context/UserContext";
+import { OrderProvider } from "./context/OrderContext";
+import Edit from "./components/Edit";
 
 function App() {
   return (
@@ -21,15 +24,19 @@ function App() {
         <Navbar />
         <main className="App-content">
           <UserProvider>
+          <OrderProvider>
           <CartProvider>
             <Routes>
               <Route path="/home" element={<Landing />} />
               <Route path="/products" element={<Products />} />
               <Route path="/orders" element={<Orders />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/edit" element={<Edit />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </CartProvider>
+          </OrderProvider>
           </UserProvider>
         </main>
         <Footer />

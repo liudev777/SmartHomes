@@ -19,7 +19,7 @@ export function parseXML(xmlText) {
     const products = [];
 
     for (let productElem of productElements) {
-      const id = productElem.getAttribute("id");
+      const id = parseInt(productElem.getAttribute("id"), 10); // Convert id to integer
       const name = productElem.getAttribute("name");
       const price = productElem.getElementsByTagName("Price")[0].textContent;
       const manufacturerRebate =

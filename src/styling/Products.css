@@ -53,3 +53,16 @@
     /* other styles */
   }
   
+  .accessories-container {
+    display: flex;           /* Enable Flexbox */
+    flex-direction: row;     /* Align items horizontally */
+    justify-content: center; /* Center items horizontally */
+    align-items: center;     /* Center items vertically */
+    gap: 10px;               /* Optional: add some space between items */
+  }
+  
+  .accessory-card {
+    flex: 0 0 auto;          /* Don't grow, don't shrink, base size on content */
+    /* Additional styling for individual accessory cards */
+  }
+  

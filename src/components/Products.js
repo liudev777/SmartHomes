@@ -10,6 +10,17 @@ const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { addToCart } = useCart();
 
+  const productAccessories = {
+    1: [3, 4], 
+    2: [5, 6],      
+    4: [6, 7] ,
+    6: [6, 7] ,
+    9: [6, 7] ,
+    11: [6, 7] ,
+    15: [6, 7] 
+  };
+
+
   // populates categories and products when system starts
   useEffect(() => {
     const fetchProducts = async () => {
@@ -26,16 +37,22 @@ const Products = () => {
         console.error("Failed to load products: ", error);
       }
     };
-
     fetchProducts();
   }, []);
 
+
+  useEffect(() => {
+    // After products are set, select the first product of the first category
+    if (categories.length > 0 && products[categories[0]].length > 0) {
+      setSelectedProduct(products[categories[0]][0]);
+    }
+  }, [categories, products]);
+
   const renderProductList = () => (
     <div className="horizontal-scroll">
-      {products[selectedCategory].map((product, index) => (
-        <div key={index} className="product-card">
+      {products[selectedCategory].map((product) => (
+        <div key={product.id} className="product-card"> {/* Use product.id as key */}
           <button
-            key={product}
             onClick={() => {
               setSelectedProduct(product);
               console.log("clicked " + product.name);
@@ -48,7 +65,6 @@ const Products = () => {
           <p>{product.price}</p>
           <p>{product.description}</p>
           <button
-            key={product}
             onClick={() => {
               addToCart(product);
             }}
@@ -59,6 +75,47 @@ const Products = () => {
       ))}
     </div>
   );
+  
+  const renderAccessories = () => {
+    if (!selectedProduct || !productAccessories[selectedProduct.id]) return null;
+
+    const allProducts = Object.values(products).flat();
+    console.log("All Products:", allProducts); // Debugging to see all products
+  
+    const accessoryIds = productAccessories[selectedProduct.id];
+    console.log("Accessory IDs:", accessoryIds); // Debugging to check accessory IDs
+  
+    const accessoryItems = accessoryIds
+      .map(accessoryId => allProducts.find(product => product.id === accessoryId))
+      .filter(accessory => accessory !== undefined); // Filter out undefined values
+  
+    console.log("Accessory Items:", accessoryItems); // Debugging to see found accessories
+  
+  
+    return (
+      <div className="accessories-container">
+        {accessoryItems.map(accessory => (
+          <div key={accessory.id} className="accessory-card">
+            <h4>{accessory.name}</h4>
+            <p>{"$" + accessory.price}</p>
+            <button onClick={() => addToCart(accessory)}>Buy Accessory</button>
+          </div>
+        ))}
+      </div>
+    );
+  };
+  
+  
+  const buyWarranty = (product) => {
+    const warrantyProduct = {
+      ...product,
+      id: `warranty-${product.id}`,
+      name: `${product.name} - Warranty`,
+      price: product.warrantyCost,
+      warrantyPurchased: true
+    };
+    addToCart(warrantyProduct);
+  };
 
   const renderProductDetails = () => (
     <div className="product-details">
@@ -71,6 +128,10 @@ const Products = () => {
       <p>{"Manufacturer Rebate: $" + selectedProduct.manufacturerRebate}</p>
       <p>{"Warranty Cost: $" + selectedProduct.warrantyCost}</p>
       <button onClick={() => addToCart(selectedProduct)}>Add to Cart</button>
+      {renderAccessories()}
+      <button onClick={() => {
+        buyWarranty(selectedProduct)
+      }}>Buy Warranty</button>
     </div>
   );
 
