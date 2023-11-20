@@ -5,38 +5,38 @@ const Login = () => {
   const { currentUser, login, logout, register } = useUser();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [newCustomerUsername, setNewCustomerUsername] = useState('');
+  const [newCustomerPassword, setNewCustomerPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
   const [role, setRole] = useState('customer');
 
   useEffect(() => {
-    // If there's a logged in user, reset the form
     if (currentUser) {
       setUsername('');
       setPassword('');
+      setIsRegistering(false);
     }
   }, [currentUser]);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (login(username, password)) {
-      console.log('Login successful');
-    } else {
-      console.log('Login failed');
-    }
+    login(username, password);
   };
 
   const handleRegister = (e) => {
     e.preventDefault();
-    if (register(username, password, role)) {
-      console.log('Registration successful');
-    } else {
-      console.log('Username already taken');
-    }
+    register(username, password, role);
+  };
+
+  const handleCreateCustomerAccount = (e) => {
+    e.preventDefault();
+    register(newCustomerUsername, newCustomerPassword, 'customer');
+    setNewCustomerUsername('');
+    setNewCustomerPassword('');
   };
 
   const handleLogout = () => {
     logout();
-    console.log('Logged out');
   };
 
   if (currentUser) {
@@ -44,6 +44,16 @@ const Login = () => {
       <div>
         <p>Welcome, {currentUser.username}! You are logged in as a {currentUser.role}.</p>
         <button onClick={handleLogout}>Logout</button>
+        {currentUser.role === 'salesman' && (
+          <div>
+            <h3>Create Customer Account</h3>
+            <form onSubmit={handleCreateCustomerAccount}>
+              <input type="text" value={newCustomerUsername} onChange={(e) => setNewCustomerUsername(e.target.value)} placeholder="Username" required />
+              <input type="password" value={newCustomerPassword} onChange={(e) => setNewCustomerPassword(e.target.value)} placeholder="Password" required />
+              <button type="submit">Create Account</button>
+            </form>
+          </div>
+        )}
       </div>
     );
   }

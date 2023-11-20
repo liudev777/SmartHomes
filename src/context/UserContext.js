@@ -75,7 +75,7 @@ export const UserProvider = ({ children }) => {
 
   // Export the user data and auth functions
   return (
-    <UserContext.Provider value={{ currentUser, login, logout, register, checkoutInfo, updateCheckoutInfo, updateUserOrders }}>
+    <UserContext.Provider value={{ currentUser, login, logout, register, checkoutInfo, updateCheckoutInfo, updateUserOrders, users, setUsers }}>
       {children}
     </UserContext.Provider>
   );

@@ -5,7 +5,6 @@ export default function Landing() {
     <main className="Landing">
       <h2>Welcome to SmartHomes</h2>
       <p>Explore our wide range of smart home products.</p>
-      {/* Add more content or a call-to-action button here */}
     </main>
   );
 }

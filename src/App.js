@@ -15,6 +15,7 @@ import { CartProvider } from "./context/CartContext";
 import { UserProvider } from "./context/UserContext";
 import { OrderProvider } from "./context/OrderContext";
 import Edit from "./components/Edit";
+import Salesman from "./components/Salesman";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/edit" element={<Edit />} />
               <Route path="/login" element={<Login />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/salesman" element={<Salesman />} />
             </Routes>
           </CartProvider>
           </OrderProvider>

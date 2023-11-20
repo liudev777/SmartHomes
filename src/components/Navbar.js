@@ -22,6 +22,9 @@ const Navbar = () => {
           <Link to="/edit" className="navbar-link">
             Edit
           </Link>
+          <Link to="/salesman" className="navbar-link">
+            Salesman
+          </Link>
         </div>
         <div className="navbar-login">
           <Link to="/login" className="navbar-link">

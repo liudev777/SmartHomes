@@ -6,7 +6,6 @@ const Orders = () => {
 
   // Calculate price after discount
   const getPriceAfterDiscount = (price, discount) => {
-    // Assuming discount is a percentage
     return discount ? (price - (price * (discount / 100))).toFixed(2) : price;
   };
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { parseXML } from "../utility/ParseXML";
 import "../styling/Products.css";
 import { useCart } from "../context/CartContext";
+import Edit from "./Edit";
+import { useUser } from "../context/UserContext";
 
 const Products = () => {
   const [categories, setCategories] = useState([]);
@@ -9,17 +11,17 @@ const Products = () => {
   const [products, setProducts] = useState({});
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { addToCart } = useCart();
+  const { currentUser } = useUser();
 
   const productAccessories = {
-    1: [3, 4], 
-    2: [5, 6],      
-    4: [6, 7] ,
-    6: [6, 7] ,
-    9: [6, 7] ,
-    11: [6, 7] ,
-    15: [6, 7] 
+    1: [3, 4],
+    2: [5, 6],
+    4: [6, 7],
+    6: [6, 7],
+    9: [6, 7],
+    11: [6, 7],
+    15: [6, 7],
   };
-
 
   // populates categories and products when system starts
   useEffect(() => {
@@ -32,14 +34,13 @@ const Products = () => {
         // console.log("Parsed Products:", parsedProducts); // Check the parsed products
         setCategories(Object.keys(parsedProducts));
         setProducts(parsedProducts);
-        setSelectedProduct(products[0])
+        setSelectedProduct(products[0]);
       } catch (error) {
         console.error("Failed to load products: ", error);
       }
     };
     fetchProducts();
   }, []);
-
 
   useEffect(() => {
     // After products are set, select the first product of the first category
@@ -51,7 +52,8 @@ const Products = () => {
   const renderProductList = () => (
     <div className="horizontal-scroll">
       {products[selectedCategory].map((product) => (
-        <div key={product.id} className="product-card"> {/* Use product.id as key */}
+        <div key={product.id} className="product-card">
+          {" "}
           <button
             onClick={() => {
               setSelectedProduct(product);
@@ -75,26 +77,28 @@ const Products = () => {
       ))}
     </div>
   );
-  
+
   const renderAccessories = () => {
-    if (!selectedProduct || !productAccessories[selectedProduct.id]) return null;
+    if (!selectedProduct || !productAccessories[selectedProduct.id])
+      return null;
 
     const allProducts = Object.values(products).flat();
     console.log("All Products:", allProducts); // Debugging to see all products
-  
+
     const accessoryIds = productAccessories[selectedProduct.id];
     console.log("Accessory IDs:", accessoryIds); // Debugging to check accessory IDs
-  
+
     const accessoryItems = accessoryIds
-      .map(accessoryId => allProducts.find(product => product.id === accessoryId))
-      .filter(accessory => accessory !== undefined); // Filter out undefined values
-  
+      .map((accessoryId) =>
+        allProducts.find((product) => product.id === accessoryId)
+      )
+      .filter((accessory) => accessory !== undefined); // Filter out undefined values
+
     console.log("Accessory Items:", accessoryItems); // Debugging to see found accessories
-  
-  
+
     return (
       <div className="accessories-container">
-        {accessoryItems.map(accessory => (
+        {accessoryItems.map((accessory) => (
           <div key={accessory.id} className="accessory-card">
             <h4>{accessory.name}</h4>
             <p>{"$" + accessory.price}</p>
@@ -104,15 +108,14 @@ const Products = () => {
       </div>
     );
   };
-  
-  
+
   const buyWarranty = (product) => {
     const warrantyProduct = {
       ...product,
       id: `warranty-${product.id}`,
       name: `${product.name} - Warranty`,
       price: product.warrantyCost,
-      warrantyPurchased: true
+      warrantyPurchased: true,
     };
     addToCart(warrantyProduct);
   };
@@ -129,9 +132,13 @@ const Products = () => {
       <p>{"Warranty Cost: $" + selectedProduct.warrantyCost}</p>
       <button onClick={() => addToCart(selectedProduct)}>Add to Cart</button>
       {renderAccessories()}
-      <button onClick={() => {
-        buyWarranty(selectedProduct)
-      }}>Buy Warranty</button>
+      <button
+        onClick={() => {
+          buyWarranty(selectedProduct);
+        }}
+      >
+        Buy Warranty
+      </button>
     </div>
   );
 
@@ -157,6 +164,9 @@ const Products = () => {
           ? renderProductDetails()
           : selectedCategory && renderProductList()}
       </div>
+      {currentUser && currentUser.role === "manager" && (
+        <Edit products={products} setProducts={setProducts} />
+      )}
     </div>
   );
 };
